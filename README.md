@@ -109,6 +109,6 @@ If things goes well, this section should automatically be replaced by a list of 
 ----
 ## 🐍 Contribution Graph  
 <p align="center">
-  <img src="https://github.com/lyudommuny13/lyudommuny13/blob/output/github-snake.svg" alt="Snake animation">
+  <img src="https://raw.githubusercontent.com/lyudommuny13/lyudommuny13/output/github-contribution-grid-snake.svg" alt="Snake animation">
 </p>
 
