@@ -1,34 +1,32 @@
-name: Generate Snake Game Contribution Graph
+name: Generate Snake Animation
 
 on:
   schedule:
-    - cron: "0 0 * * *" # Runs daily at midnight
-  workflow_dispatch: # Allow manual trigger
+    - cron: "0 0 * * *" # Runs every day at midnight
+  workflow_dispatch:
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
-      - name: Generate Contribution Snake
+      - name: Generate Snake Animation
         uses: Platane/snk@v3
         with:
           github_user_name: ${{ github.repository_owner }}
           outputs: |
-            dist/github-snake.svg
+            dist/github-contribution-grid-snake.svg
 
       - name: Upload Snake Animation
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: github-snake
-          path: dist/github-snake.svg
+          name: snake-animation
+          path: dist/github-contribution-grid-snake.svg
 
-      - name: Commit and Push Snake Animation
-        run: |
-          git config --global user.name "GitHub Actions"
-          git config --global user.email "actions@github.com"
-          git add dist/github-snake.svg
-          git commit -m "Updated Snake Game Contribution Graph" || echo "No changes to commit"
-          git push
+      - name: Deploy Snake Animation
+        uses: JamesIves/github-pages-deploy-action@v4
+        with:
+          branch: output
+          folder: dist
