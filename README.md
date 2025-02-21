@@ -107,3 +107,8 @@ If things goes well, this section should automatically be replaced by a list of 
 <br />
 
 ----
+## 🐍 Contribution Graph  
+<p align="center">
+  <img src="https://github.com/lyudommuny13/lyudommuny13/blob/output/github-snake.svg" alt="Snake animation">
+</p>
+
